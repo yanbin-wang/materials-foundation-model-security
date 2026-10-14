@@ -62,10 +62,10 @@
 
 | 论文 | 核心贡献 | 说明 |
 |------|----------|------|
-| BadNets (2017) | 早期后门攻击经典工作 | 触发器 + 条件行为的基本范式 |
-| Clean-Label Backdoor (2019) | 干净标签后门 | 更隐蔽的投毒方式 |
-| Poisoning Attacks on LLMs (多篇) | 大语言模型数据投毒 | 低比例污染与隐蔽性设计的直接来源 |
-| Graph Backdoor (USENIX Security 2021) | 图模型后门 | 与晶体图结构相关，可作结构触发器参考 |
+| [BadNets](https://arxiv.org/abs/1708.06733) (2017) | 早期后门攻击经典工作 | 触发器 + 条件行为的基本范式 |
+| [Clean-Label Backdoor Attacks](https://openreview.net/forum?id=HJg6e2CcK7) (ICLR 2019) | 干净标签后门 | 更隐蔽的投毒方式 |
+| Poisoning Attacks on LLMs（多篇） | 大语言模型数据投毒 | 低比例污染与隐蔽性设计的直接来源 |
+| [Graph Backdoor](https://www.usenix.org/conference/usenixsecurity21/presentation/xi) (USENIX Security 2021) | 图模型后门 | 与晶体图结构相关，可作结构触发器参考 |
 
 ---
 
