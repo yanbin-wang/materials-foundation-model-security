@@ -51,7 +51,7 @@
 |------|----------|------------------|
 | [Poisoning the Genome](https://arxiv.org/abs/2603.27465) (2026) | 基因组基础模型的系统投毒与后门（研究了 2 个架构，一篇文章里完成预训练投毒 + 微调后门 + 下游评估） | 完整流程与低比例投毒 + 高隐蔽性设计；威胁模型与评估指标可直接迁移 |
 | [SafeProtein](https://arxiv.org/abs/2509.03487) (2025) | 蛋白基础模型红队与基准 | 基准构建方式与评估协议 |
-| Medical LLM poisoning (Nature Medicine, 2025) | 极低比例投毒（0.001%）即可生效且高度隐蔽 | 低比例污染 + 常规 benchmark 无明显下降的隐蔽性设计 |
+| [Medical large language models are vulnerable to data-poisoning attacks](https://www.nature.com/articles/s41591-024-03445-1) (Nature Medicine, 2025) | 极低比例投毒（0.001%）即可生效且高度隐蔽 | 低比例污染 + 常规 benchmark 无明显下降的隐蔽性设计 |
 
 **为什么优先模仿 Poisoning the Genome？**  
 这是目前科学基础模型投毒最完整的模板，威胁模型划分、攻击阶段设计、评估指标都可以直接迁移。
@@ -64,7 +64,8 @@
 |------|----------|------|
 | [BadNets](https://arxiv.org/abs/1708.06733) (2017) | 早期后门攻击经典工作 | 触发器 + 条件行为的基本范式 |
 | [Clean-Label Backdoor Attacks](https://openreview.net/forum?id=HJg6e2CcK7) (ICLR 2019) | 干净标签后门 | 更隐蔽的投毒方式 |
-| Poisoning Attacks on LLMs（多篇） | 大语言模型数据投毒 | 低比例污染与隐蔽性设计的直接来源 |
+| [BackdoorLLM](https://arxiv.org/abs/2408.12798) (2024) | LLM 后门攻击与防御综合基准 | 大语言模型数据投毒与后门的系统性评估 |
+| [Revisiting Backdoor Attacks on LLMs](https://arxiv.org/abs/2505.17601) (2025) | 通过无害输入实现隐蔽投毒 | 低比例、高隐蔽性的 LLM 投毒方法 |
 | [Graph Backdoor](https://www.usenix.org/conference/usenixsecurity21/presentation/xi) (USENIX Security 2021) | 图模型后门 | 与晶体图结构相关，可作结构触发器参考 |
 
 ---
@@ -105,11 +106,11 @@
 
 在完成数据投毒与后门基准之后，可考虑以下方向：
 
-- **科学生成模型的红队评估**：针对 MatterGen 等晶体生成模型，评估在特定提示或约束下生成不稳定或潜在危险结构的能力（参考 SafeProtein 的思路）。
+- **科学生成模型的红队评估**：针对 MatterGen 等晶体生成模型，评估在特定提示或约束下生成不稳定或潜在危险结构的能力（参考 [SafeProtein](https://arxiv.org/abs/2509.03487) 的思路）。
 - **水印与溯源**：为晶体生成模型设计可检测的水印，用于模型知识产权保护与滥用追踪。可参考蛋白领域的工作：
   - [FoldMark](https://arxiv.org/abs/2410.20354)：蛋白生成模型的水印嵌入与检测
   - [MARCO](https://arxiv.org/abs/2610.08316)：具有“放射性”转移特性的蛋白生成模型水印
-  - SynthID Bio（Google DeepMind, Nature 2026）：功能保持的 AI 设计蛋白水印
+  - [Function-preserving watermarking of AI-generated proteins (SynthID Bio)](https://www.nature.com/articles/s41586-026-10965-y)（Google DeepMind, Nature 2026）
 - **科学 Agent 安全**：针对材料/化学工作流 Agent，研究工具调用安全、错误累积与双重用途监控。
 
 这些方向目前不作为主线，是否推进取决于第一阶段工作的进展与可用资源。
@@ -123,6 +124,7 @@
 - MatterGen: https://github.com/microsoft/mattergen
 - Poisoning the Genome: https://arxiv.org/abs/2603.27465
 - SafeProtein: https://arxiv.org/abs/2509.03487
+- Medical LLM poisoning: https://www.nature.com/articles/s41591-024-03445-1
 
 ---
 
